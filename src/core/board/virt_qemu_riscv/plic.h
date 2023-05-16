@@ -28,15 +28,15 @@ struct Board::Plic : Genode::Mmio
 			 * VIRT_IRQCHIP_NUM_SOURCES from Qemu include/hw/riscv/virt.h.
 			 */
 			NR_OF_IRQ = 96,
-		};
-		enum {
+
 			ENABLE_BASE    = 0x2000,
 			ENABLE_STRIDE  = 0x80,
 			CONTEXT_BASE   = 0x200000,
 			CONTEXT_STRIDE = 0x1000,
 		};
+
 		enum {
-			ENABLE_ADDR   = ENABLE_BASE + CONTEXT * ENABLE_STRIDE,
+			ENABLE_ADDR   = ENABLE_BASE  + CONTEXT * ENABLE_STRIDE,
 			PRI_THR_ADDR  = CONTEXT_BASE + CONTEXT * CONTEXT_STRIDE,
 			ID_ADDR       = CONTEXT_BASE + CONTEXT * CONTEXT_STRIDE + 0x4,
 		};
